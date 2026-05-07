@@ -1,7 +1,7 @@
 # Word Ladder Solver
 
 ## Author
-Your Name  
+Ghanashyam KC 
 Internship Task Submission  
 
 ---
@@ -90,32 +90,18 @@ Result:
 
 ---
 
-### Test Case 2 — Unsolvable
+### Test Case 2 — Different Length Words
 
 Input:
 - Start Word: CAT
-- End Word: ZOO
-
-Output:
-No valid transformation path found
-
-Reason:
-- No connecting transformation sequence exists in the dictionary
-
----
-
-### Test Case 3 — Different Length Words
-
-Input:
-- Start Word: CAT
-- End Word: ELEPHANT
+- End Word: PART
 
 Output:
 Words have different lengths
 
 ---
 
-### Test Case 4 — Start Equals End
+### Test Case 3 — Start Equals End
 
 Input:
 - Start Word: CAT
@@ -125,6 +111,31 @@ Output:
 Start equals end word
 
 ---
+### Test Case 4 — Unsolvable (no path)
+
+Input:
+- Start Word: CAT
+- End Word: ZOO
+
+Output:
+End word not in dictionary
+
+Reason:
+- No connecting transformation sequence exists in the dictionary
+
+---
+
+### Test Case 5 — Another Solvable Path
+
+Input:
+- Start Word: COLD
+- End Word: MOST
+
+Output:
+COLD → BOLD → BOLT → BOAT → MOAT → MOST
+
+Result:
+- Valid transformation path found
 
 ## Time Complexity
 
@@ -191,11 +202,20 @@ Instead of storing complete paths:
 
 ## Project Structure
 
-word-ladder-bfs/
-
-├── main.py  
-├── README.md  
-└── test_cases.py  
+word-ladder-project
+│
+├── src
+│   ├── __init__.py
+│   ├── dictionary.py
+│   └── word_ladder.py
+│
+├── tests
+│   └── test_cases.py
+│
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── run.py 
 
 ---
 
@@ -204,7 +224,7 @@ word-ladder-bfs/
 Run the main program:
 
 ```bash
-python main.py
+python run.py
 
 ```bash
 python -m tests.test_cases
